@@ -354,7 +354,15 @@ module.exports = grammar(GO, {
         _css_identifier: $ => alias($.identifier, $.css_identifier),
         _script_identifier: $ => alias($.identifier, $.script_identifier),
 
-        element_identifier: $ => /[a-zA-Z0-9\-]+/,
+        _special_element_identifier: $ => token(prec(1, choice(
+            /style/,
+            /script/,
+        ))),
+
+        element_identifier: $ => choice(
+            /[a-zA-Z0-9\-]+/,
+            $._special_element_identifier,
+        ),
 
         // Taken from https://github.com/tree-sitter/tree-sitter-html/blob/master/grammar.js
         attribute_name: _ => /[^<>"'/=\s]+/,
