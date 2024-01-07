@@ -1505,6 +1505,11 @@
     }
   },
   {
+    "type": "element_identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "empty_statement",
     "named": true,
     "fields": {}
@@ -3712,10 +3717,6 @@
   },
   {
     "type": "element_comment",
-    "named": true
-  },
-  {
-    "type": "element_identifier",
     "named": true
   },
   {

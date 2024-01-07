@@ -8052,9 +8052,38 @@
       "named": true,
       "value": "script_identifier"
     },
+    "_special_element_identifier": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PREC",
+        "value": 1,
+        "content": {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "style"
+            },
+            {
+              "type": "PATTERN",
+              "value": "script"
+            }
+          ]
+        }
+      }
+    },
     "element_identifier": {
-      "type": "PATTERN",
-      "value": "[a-zA-Z0-9\\-]+"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[a-zA-Z0-9\\-]+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_special_element_identifier"
+        }
+      ]
     },
     "attribute_name": {
       "type": "PATTERN",
