@@ -99,3 +99,30 @@ templ Foobar() {
           name: (attribute_name)
           value: (quoted_attribute_value
             (attribute_value)))))))
+
+===
+Self closing script tag
+===
+
+package main
+
+templ Foobar() {
+  <script src="/app.js" />
+}
+
+---
+
+(source_file
+  (package_clause
+    (package_identifier))
+  (component_declaration
+    name: (component_identifier)
+    (parameter_list)
+    (component_block
+      (element
+        (self_closing_tag
+          name: (element_identifier)
+          (attribute
+            name: (attribute_name)
+            value: (quoted_attribute_value
+              (attribute_value))))))))
